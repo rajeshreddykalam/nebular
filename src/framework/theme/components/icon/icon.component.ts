@@ -45,7 +45,7 @@ export interface NbIconConfig {
  * which integrates SVG [Eva Icons](https://akveo.github.io/eva-icons/) pack to Nebular. To add it to your
  * project run:
  * ```sh
- * npm i @nebular/eva-icons
+ * npm i eva-icons @nebular/eva-icons
  * ```
  * This command will install Eva Icons pack. Then register `NbEvaIconsModule` into your app module:
  * ```ts
@@ -218,13 +218,20 @@ export class NbIconComponent implements NbIconConfig, OnChanges, OnInit {
   }
 
   ngOnChanges() {
-    if (this.iconDef) {
-      this.iconDef = this.renderIcon(this.icon, this.pack, this.options);
+    const iconDef = this.iconLibrary.getIcon(this.icon, this.pack);
+    if (iconDef) {
+      this.renderIcon(this.icon, this.pack, this.options);
+    } else {
+      this.clearIcon();
     }
   }
 
   renderIcon(name: string, pack?: string, options?: { [name: string]: any }) {
     const iconDefinition = this.iconLibrary.getIcon(name, pack);
+
+    if (!iconDefinition) {
+      return;
+    }
 
     const content = iconDefinition.icon.getContent(options);
     if (content) {
@@ -233,6 +240,11 @@ export class NbIconComponent implements NbIconConfig, OnChanges, OnInit {
 
     this.assignClasses(iconDefinition.icon.getClasses(options));
     return iconDefinition;
+  }
+
+  protected clearIcon(): void {
+    this.html = '';
+    this.assignClasses([]);
   }
 
   protected assignClasses(classes: string[]) {

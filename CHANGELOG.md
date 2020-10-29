@@ -1,3 +1,89 @@
+<a name="6.2.1"></a>
+## [6.2.1](https://github.com/akveo/nebular/compare/v6.2.0...v6.2.1) (2020-10-01)
+
+
+### Bug Fixes
+
+* **accordion:** extract inner elements styles outside accordion ([#2536](https://github.com/akveo/nebular/issues/2536)) ([9089690](https://github.com/akveo/nebular/commit/9089690))
+* **calendar range cells:** handle unset date or selectedValue ([#2537](https://github.com/akveo/nebular/issues/2537)) ([0f20b9c](https://github.com/akveo/nebular/commit/0f20b9c))
+
+
+
+<a name="6.2.0"></a>
+# [6.2.0](https://github.com/akveo/nebular/compare/v6.1.0...v6.2.0) (2020-09-25)
+
+
+### Bug Fixes
+
+* **build:** provide ES5 code in UMD bundles ([#2520](https://github.com/akveo/nebular/issues/2520)) ([e64bac0](https://github.com/akveo/nebular/commit/e64bac0))
+* **timepicker:** remove duplicate providers ([#2529](https://github.com/akveo/nebular/issues/2529)) ([7e5e489](https://github.com/akveo/nebular/commit/7e5e489))
+
+
+### Features
+
+* **datepicker:** export calendar with time component ([#2528](https://github.com/akveo/nebular/issues/2528)) ([f378492](https://github.com/akveo/nebular/commit/f378492))
+* add support for TypeScript 4.0 ([#2523](https://github.com/akveo/nebular/issues/2523)) ([7b7f0a4](https://github.com/akveo/nebular/commit/7b7f0a4))
+
+Please note required `@angular/cdk` package version changed to `10.2.1`+.
+
+
+
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/akveo/nebular/compare/v6.0.1...v6.1.0) (2020-09-17)
+
+
+### Bug Fixes
+
+* **auth:** add client_id to the refresh request ([#2350](https://github.com/akveo/nebular/issues/2350)) ([10b01fa](https://github.com/akveo/nebular/commit/10b01fa))
+* **radio:** add value reset with undefined ([#2511](https://github.com/akveo/nebular/issues/2511)) ([9ac12c7](https://github.com/akveo/nebular/commit/9ac12c7))
+* **rangepicker:** avoid setting month cell to null ([#2330](https://github.com/akveo/nebular/issues/2330)) ([a577b26](https://github.com/akveo/nebular/commit/a577b26))
+
+
+### Features
+
+* **badge:** dot mode ([#2479](https://github.com/akveo/nebular/issues/2479)) ([afe02b7](https://github.com/akveo/nebular/commit/afe02b7))
+* **menu:** support more navigation extras ([#2420](https://github.com/akveo/nebular/issues/2420)) ([03aabfa](https://github.com/akveo/nebular/commit/03aabfa))
+* **timepicker:** add timepicker component ([#2402](https://github.com/akveo/nebular/issues/2402)) ([70ee391](https://github.com/akveo/nebular/commit/70ee391))
+
+
+
+<a name="6.0.1"></a>
+# [6.0.1](https://github.com/akveo/nebular/compare/v6.0.0...v6.0.1) (2020-08-31)
+
+
+### Bug Fixes
+
+* **dynamic overlay:** prevent multiple onStable subscriptions ([#2494](https://github.com/akveo/nebular/issues/2494)) ([f22e87d](https://github.com/akveo/nebular/commit/f22e87d))
+
+
+
+<a name="6.0.0"></a>
+# [6.0.0](https://github.com/akveo/nebular/compare/v5.1.0...v6.0.0) (2020-07-31)
+
+
+### Bug Fixes
+
+* **datepicker:** background and border theming ([#2418](https://github.com/akveo/nebular/issues/2418)) ([381eb00](https://github.com/akveo/nebular/commit/381eb00))
+* **form field:** addon alignment ([#2460](https://github.com/akveo/nebular/issues/2460)) ([dc154ab](https://github.com/akveo/nebular/commit/dc154ab))
+* **nbButton:** allow specifying custom tabindex ([#2452](https://github.com/akveo/nebular/issues/2452)) ([e9f84be](https://github.com/akveo/nebular/commit/e9f84be))
+
+
+### Code Refactoring
+
+* **nb-icon:** return null if icon wasn't found ([#2466](https://github.com/akveo/nebular/issues/2466)) ([4af8924](https://github.com/akveo/nebular/commit/4af8924))
+
+
+### Features
+
+* upgrade to Angular 10 ([#2464](https://github.com/akveo/nebular/issues/2464)) ([540ee46](https://github.com/akveo/nebular/commit/540ee46))
+
+
+### BREAKING CHANGES
+
+* **nb-icon:** `NbIconLibraries.getSvgIcon` and `NbIconLibraries.getIcon` could return null if icon wasn't found and won't throw. As methods don't throw now, you need to handle possible `null` return value.
+* **Angular:** Nebular packages now require Angular 10+. Nebular packages no longer include ESM5 and FESM5 bundles as per Angular Package Format 10.
+* **NbBasePicker**: Angular lifecycle methods moved to `NbBasePickerComponent`. If you use `NbBasePicker` as a base class of your custom picker change it to `NbBasePickerComponent`.
+
 <a name="5.1.0"></a>
 # [5.1.0](https://github.com/akveo/nebular/compare/v5.0.0...v5.1.0) (2020-06-03)
 
